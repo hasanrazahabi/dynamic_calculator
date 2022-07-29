@@ -13,22 +13,37 @@ function App() {
   return (
     <>
       <div className="App">
-        <input
+        <label
+          htmlFor="number"
           style={{
+            textAlign: "left",
             padding: "10px",
             fontSize: "32px",
             fontWeight: 700,
             width: "200px",
             marginTop: "30px",
           }}
-          type="number"
-          name="number"
-          value={number}
-          id="number"
-          onChange={(e) => {
-            setNumber(e.target.value);
-          }}
-        />
+        >
+          Please Enter the Number to get Table
+        </label>
+        <div>
+          <input
+            style={{
+              padding: "10px",
+              fontSize: "32px",
+              fontWeight: 700,
+              width: "200px",
+              marginTop: "30px",
+            }}
+            type="number"
+            name="number"
+            value={number}
+            id="number"
+            onChange={(e) => {
+              setNumber(e.target.value);
+            }}
+          />
+        </div>
         <ul style={{ listStyleType: "none" }}>
           {result.map((item, index) => {
             return (
@@ -36,7 +51,7 @@ function App() {
                 key={index}
                 style={{ marginTop: "10px", fontSize: "32px", fontWeight: 700 }}
               >
-                {item}*{number}={item * number}
+                {`The mutiple of ${item}*${number}=${item * number}`}
               </li>
             );
           })}
